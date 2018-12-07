@@ -9,17 +9,17 @@ def countX(list, x):
 
 while gotIt:
   the_in = open("input1.txt", 'r')
-  the_out = open("output.txt", 'a')
+  #the_out = open("output.txt", 'a')
   for x in the_in:
     if x[0] == '-':
       value -= int(x[1:])
     else:
       value += int(x[1:])
-    the_out.writelines("%s\n" % value)
+    #the_out.writelines("{}\n".format(value))
     selection.append(value)
 	
   the_in.close()
-  the_out.close()
+  #the_out.close()
   #the_out = open("output.txt", 'r')
     
   for x in selection: 
@@ -27,8 +27,12 @@ while gotIt:
     iterate = countX(selection, selection[fuh])
 	
     if iterate > 1:
-      print("There are ", iterate, "of", selection[fuh])
+      the_end = open("result.txt")
+      the_end.writelines("There are {} of {} after {} times ".format(iterate, selection[fuh], times))
+      the_end.close()
+      print("There are {} of {} after {} times ".format(iterate, selection[fuh], times))
       gotIt = False
+
     fuh += 1
   
   #the_out.close()
