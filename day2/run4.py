@@ -4,12 +4,7 @@ box_ids = []
 with open('input.txt') as f:
   box_ids = f.read().splitlines()
 
-sorted_box_ids = sorted(box_ids)
-
-#print(box_ids)
-print("-------------")
-
 for x in box_ids:
-  countem = get_close_matches(x,sorted_box_ids,cutoff=0.95)
+  countem = get_close_matches(x,box_ids,cutoff=0.95)
   if len(countem) > 1:
     print(countem)
