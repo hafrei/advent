@@ -3,17 +3,18 @@ running = True
 
 def compare_id(first_id, second_id, third_id):
   incor = [0,0]
-  print("We have:\n{}\n{}\n{}".format(first_id,second_id,third_id))
+  #print("We have:\n{}\n{}\n{}".format(first_id,second_id,third_id))
   for windex, s in enumerate(first_id):
-    print("{} has an index of {}".format(s,windex))
-    print("{} has an index of {}".format(second_id[windex],windex))
+    #print("{} has an index of {}".format(s,windex))
+    #print("{} has an index of {}".format(second_id[windex],windex))
     if s != second_id[windex]:
       incor[0] += 1
     if s != third_id[windex]:
       incor[1] += 1
   return incor
 
-box_ids = open('input1.txt', 'r').readlines() 
+with open('input.txt') as f:
+  box_ids.append(f.read().splitlines())
 
 sorted_box_ids = sorted(box_ids)
 
